@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
 
 class SignUpForm extends Component{
   render(){
@@ -11,8 +16,7 @@ class SignUpForm extends Component{
           <input type='email' placeholder = 'email'/>
           <input type='text' placeholder = 'First Name'/>
           <input type='text' placeholder = 'Last Name'/>
-          <p>Already a member? <a href='#'>Sign in!</a></p>
-          <a href='#'>Don't Have an account?</a>
+          <p>Already a member? <Link to="/">Sign in!</Link></p>
           </form>
      </div>
     )

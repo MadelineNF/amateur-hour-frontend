@@ -5,6 +5,8 @@ import Nav from './components/nav';
 import Footer from './components/footer'
 import Landing from './components/landing'
 import SignUpForm from './components/signUpForm'
+import ImageList from './components/images/imageList'
+import Image from './components/images/image'
 import {
   BrowserRouter as Router,
   Route,
@@ -18,8 +20,11 @@ constructor(props) {
     super(props);
     this.state = {
     //props and state go here
+    //images: [],
+    //users: [],
+    //collections: [],
     }
-//functions for input hcanges etc. here
+//functions for input changes etc. here
    
   }
 
@@ -30,7 +35,7 @@ constructor(props) {
      */
 
     //fetch collections
-    fetch('https://the-gayllery.herokuapp.com/api/v1/collections.json')
+    /*fetch('https://the-gayllery.herokuapp.com/api/v1/collections.json')
       .then((response) => {
         console.log(response);
         return response.json()
@@ -38,27 +43,27 @@ constructor(props) {
       .then((responseJson) => {
         this.setState((prevState) => {
           return {
-            collections: responseJson.quotesData,
+            collections: responseJson.collectionsData,
           }
         });
-      });
+      });*/
 
-    //fetch images
-    fetch('https://the-gayllery.herokuapp.com/api/v1/images.json')
-      .then((response) => {
-        console.log(response);
-        return response.json()
-      })
-      .then((responseJson) => {
-        this.setState((prevState) => {
-          return {
-            collections: responseJson.quotesData,
-          }
-        });
-      });
+    // //fetch images
+    // fetch('https://the-gayllery.herokuapp.com/api/v1/images.json')
+    //   .then((response) => {
+    //     console.log(response);
+    //     return response.json()
+    //   })
+    //   .then((responseJson) => {
+    //     this.setState((prevState) => {
+    //       return {
+    //         images: responseJson.imagesData,
+    //       }
+    //     });
+    //   });
 
     //fetch users
-    fetch('https://the-gayllery.herokuapp.com/api/v1/users.json')
+    /*fetch('https://the-gayllery.herokuapp.com/api/v1/users.json')
       .then((response) => {
         console.log(response);
         return response.json()
@@ -66,27 +71,27 @@ constructor(props) {
       .then((responseJson) => {
         this.setState((prevState) => {
           return {
-            collections: responseJson.quotesData,
+            users: responseJson.usersData,
           }
         });
-      });
+      });*/
   }
 
   render() {
     return (
-      <div className="App">
-        <Nav/>
+      <Router>
+        <div className="App">
+          <Nav/>
           <main>
-            <Router>
-              <div>
-                {/* Set routes here */}
-                <Route exact path= '/' component= {Landing} />
-                <Route exact path= '/sign-up' component= {SignUpForm} />
-              </div>
-            </Router>
-         </main> 
-        <Footer/>
-      </div>
+                  {/* Set routes here */}
+            <Route exact path= '/' component= {Landing} />
+            <Route exact path= '/sign-up' component= {SignUpForm} />
+            <Route exact path= '/images' component= {ImageList} />
+            <Route exact path= '/image' component= {Image} />
+          </main> 
+          <Footer/>
+        </div>
+      </Router>
     );
   }
 }
