@@ -11,9 +11,10 @@ class Nav extends Component{
       <nav>
         <ul>
           <li><Link to='/'>Home</Link></li>
-          <li><a href='#about'>About</a></li>
-          <li><a href='#contact'>Contact</a></li>
-          <li><a href='#profile'>Profile</a></li>
+          <li><Link to='/about'>About</Link></li>
+          <li><Link to='/contact'>Contact</Link></li>
+          <li><Link to='/profile'>Profile</Link></li>
+          <li><Link to='/images'>Images</Link></li>
         </ul>
       </nav>
     )

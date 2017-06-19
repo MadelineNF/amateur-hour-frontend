@@ -87,7 +87,7 @@ constructor(props) {
             <Route exact path= '/' component= {Landing} />
             <Route exact path= '/sign-up' component= {SignUpForm} />
             <Route exact path= '/images' component= {ImageList} />
-            <Route exact path= '/image' component= {Image} />
+            <Route exact path= '/image/:id' component= {Image} />
           </main> 
           <Footer/>
         </div>

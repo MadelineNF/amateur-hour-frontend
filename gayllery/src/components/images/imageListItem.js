@@ -9,11 +9,25 @@ import ImageList from './imageList';
 
 class ImageListItem extends Component{
   render(){
+    const boxStyle = {
+      width: '80%',
+      height: '120px',
+      color: '#374142',
+      background: 'white',
+      listStyle: 'none',
+      margin:'10px auto 20px auto',
+      boxShadow: "2px 3px 13px 1px rgba(56,55,56,0.66)",
+    }
+    const backgroundDark = {
+      background: '#374142'
+    }
     return(
-     <li>
-      <p><Link to= "/image">{this.props.image.name}</Link></p>
+     
+     <li style= {boxStyle}>
+      <p><Link to= "/image/{this.props.image.id}">{this.props.image.name}</Link></p>
       <p>{this.props.image.description}</p>
      </li>
+     
     )
   }
 }
